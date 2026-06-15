@@ -1,0 +1,49 @@
+name: Regenerate flat DB and Altium DbLib
+on:
+    push:
+        paths:
+            - database/parts_db/master_library.db
+            - database/parts_db/schema.py
+            - database/parts_db/categories.json
+            - database/flatten_db.py
+            - database/dblib/**
+            - database/requirements.txt
+            - .github/workflows/regen_altium_db.yml
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+concurrency:
+    group: regen-${{github.ref}}
+    cancel-in-progress: true
+
+jobs:
+    regenerate:
+        name: Regenerate DB and DbLib
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+
+            - uses: actions/setup-python@v6
+              with:
+                  python-version: "3.14"
+                  cache: pip
+                  cache-dependency-path: database/requirements.txt
+
+            - name: Install dependencies
+              run: pip install -r database/requirements.txt
+
+            - name: Regenerate flat database
+              working-directory: database
+              run: python flatten_db.py --out ../Altium-Library.db
+
+            - name: Regenerate DbLib
+              working-directory: database
+              run: python -m dblib.generate_dblib --out ../Altium-Library.DbLib
+
+            - name: Commit regenerated files
+              uses: stefanzweifel/git-auto-commit-action@v7
+              with:
+                  commit_message: "ci: regenerate flat DB and DbLib"
+                  file_pattern: Altium-Library.db Altium-Library.DbLib

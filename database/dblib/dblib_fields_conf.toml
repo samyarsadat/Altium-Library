@@ -1,0 +1,12 @@
+pk_field = "Part Number"
+
+fields = [
+    "Description",
+    "Library Ref",
+    "Library Path"
+]
+
+footprint_fields = [
+    "Footprint Ref",
+    "Footprint Path"
+]

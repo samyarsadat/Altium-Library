@@ -1,0 +1,38 @@
+{
+    "repo_dir": "issus/altium-library/master/footprints",
+    "file_type": "PcbLib",
+    "files": {
+        "Resistor - Chip": {
+            "dl_filename_prefix": "PCB - RESISTOR - CHIP - ",
+            "filename_prefix": "RES_CHIP_",
+            "downloads": {
+                "0402_1005": "RES 0402_1005",
+                "0603_1608": "RES 0603_1608",
+                "0805_2012": "RES 0805_2012",
+                "1206_3216": "RES 1206_3216",
+                "1210_3225": "RES 1210_3225",
+                "2512_6432": "RES 2512_6432",
+                "TE_TLRP_2512": "TE TLRP 2512"
+            }
+        },
+        "Capacitor - MLCC": {
+            "dl_filename_prefix": "PCB - CAPACITOR - MLCC - CAP ",
+            "filename_prefix": "CAP_MLCC_",
+            "downloads": {
+                "0402_1005": "0402_1005",
+                "0603_1608": "0603_1608",
+                "0805_2012": "0805_2012",
+                "1206_3216": "1206_3216"
+            }
+        },
+        "LED": {
+            "dl_filename_prefix": "PCB - LED - LED ",
+            "filename_prefix": "LED_IND_",
+            "downloads": {
+                "0603_1608": "0603_1608",
+                "0805_2012": "0805_2012",
+                "1206_3216": "1206_3216"
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+name: Test GitHub file download script
+on:
+    push:
+        paths:
+            - gh_download/**
+            - "**/gh_downloads.json"
+            - .github/workflows/test_file_dls.yml
+    pull_request:
+        paths:
+            - gh_download/**
+            - "**/gh_downloads.json"
+    workflow_dispatch:
+
+concurrency:
+    group: test-dls-${{github.ref}}
+    cancel-in-progress: true
+
+jobs:
+    test-downloads:
+        name: Test automatic downloads
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+
+            - uses: actions/setup-python@v6
+              with:
+                  python-version: "3.14"
+                  cache: pip
+                  cache-dependency-path: gh_download/requirements.txt
+
+            - name: Install dependencies
+              run: pip install -r gh_download/requirements.txt
+
+            - name: Test download URLs
+              working-directory: gh_download
+              run: python downloader.py --test-dls

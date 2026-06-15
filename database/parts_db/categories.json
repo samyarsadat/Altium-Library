@@ -1,0 +1,186 @@
+[
+    {
+        "key": "TitleBlock",
+        "sheet": "Title Block",
+        "params": [
+            "SheetSize"
+        ],
+        "has_manufacturer": false,
+        "has_supplier": false,
+        "has_footprint": false
+    },
+    {
+        "key": "GenPCB",
+        "sheet": "Generic - PCB",
+        "params": [
+            "Size Variant"
+        ],
+        "has_manufacturer": false,
+        "has_supplier": false,
+        "has_footprint": true
+    },
+    {
+        "key": "GenResistor",
+        "sheet": "Generic - Resistor",
+        "params": [
+            "Value",
+            "Tolerance",
+            "Power"
+        ],
+        "has_manufacturer": false,
+        "has_supplier": false,
+        "has_footprint": true
+    },
+    {
+        "key": "GenMLCC",
+        "sheet": "Generic - MLCC",
+        "params": [
+            "Value",
+            "Tolerance",
+            "Voltage",
+            "Temp Coeff"
+        ],
+        "has_manufacturer": false,
+        "has_supplier": false,
+        "has_footprint": true
+    },
+    {
+        "key": "GenIndLED",
+        "sheet": "Generic - Indicator LED",
+        "params": [
+            "Color",
+            "Lens Color"
+        ],
+        "has_manufacturer": false,
+        "has_supplier": false,
+        "has_footprint": true
+    },
+    {
+        "key": "IC",
+        "sheet": "Library - IC",
+        "params": [],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "Sensor",
+        "sheet": "Library - Sensor",
+        "params": [],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "FET",
+        "sheet": "Library - FET",
+        "params": [],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "Button",
+        "sheet": "Library - Button",
+        "params": [
+            "Circuit"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "LED",
+        "sheet": "Library - LED",
+        "params": [
+            "Color",
+            "Lens Color",
+            "Type"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "Connector",
+        "sheet": "Library - Connector",
+        "params": [],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "AluCap",
+        "sheet": "Library - Aluminium Capacitor",
+        "params": [
+            "Value",
+            "Tolerance",
+            "Voltage",
+            "ESR",
+            "Lifetime Temp"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "Inductor",
+        "sheet": "Library - Inductor",
+        "params": [
+            "Value",
+            "Tolerance",
+            "Current Rating",
+            "Saturation Current",
+            "DC Resistance"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "ChemFuse",
+        "sheet": "Library - Chem Fuse",
+        "params": [
+            "Voltage",
+            "Current Rating",
+            "Response Time"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "Crystal",
+        "sheet": "Library - Crystal",
+        "params": [
+            "Frequency",
+            "Stability",
+            "Tolerance",
+            "Load Capacitance",
+            "ESR"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "CstmMCU",
+        "sheet": "Custom - MCU",
+        "params": [],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    },
+    {
+        "key": "CstmFuse",
+        "sheet": "Custom - Fuse",
+        "params": [
+            "Voltage",
+            "Holding Current",
+            "Trip Current"
+        ],
+        "has_manufacturer": true,
+        "has_supplier": true,
+        "has_footprint": true
+    }
+]

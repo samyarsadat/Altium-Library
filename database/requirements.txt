@@ -1,0 +1,3 @@
+sqlalchemy~=2.0
+pandas~=3.0
+Unidecode~=1.4.0
