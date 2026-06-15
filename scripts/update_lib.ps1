@@ -1,7 +1,9 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Hard-resets the repository, pulls the latest changes, and re-runs the downloader.
+    Hard-resets the repository, pulls the latest changes, re-runs the downloader,
+    and rewrites the .DbLib connection string to point at the local absolute path
+    of Altium-Library.db.
 .NOTES
     If script execution is blocked, run via:
         powershell -ExecutionPolicy Bypass -File .\update_lib.ps1
@@ -27,3 +29,17 @@ try {
 }
 
 & (Join-Path $PSScriptRoot "download_files.ps1") @args
+
+$dblibPath = Join-Path $repoRoot "Altium-Library.DbLib"
+$dbPath = [System.IO.Path]::GetFullPath((Join-Path $repoRoot "Altium-Library.db"))
+
+if (-not (Test-Path -LiteralPath $dblibPath)) { throw "DbLib not found: $dblibPath" }
+
+Write-Host "Patching .DbLib database path -> $dbPath"
+$content = [System.IO.File]::ReadAllText($dblibPath)
+$pattern = 'Database=[^;"]*Altium-Library\.db'
+if ($content -notmatch $pattern) { throw "Could not find database path in $dblibPath" }
+$content = [regex]::Replace($content, $pattern, { "Database=$dbPath" })
+
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($dblibPath, $content, $utf8NoBom)

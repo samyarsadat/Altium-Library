@@ -38,7 +38,7 @@
             "Value",
             "Tolerance",
             "Voltage",
-            "Temp Coeff"
+            "Dielectric"
         ],
         "has_manufacturer": false,
         "has_supplier": false,
