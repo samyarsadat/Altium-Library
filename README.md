@@ -23,11 +23,14 @@ This repository contains my main Altium database library. This library contains 
 > You need to install an ODBC driver for SQLite. I tested with [Christian Werner's driver](http://www.ch-werner.de/sqliteodbc/),
 > but you can also use [the one made by Devart](https://www.devart.com/odbc/sqlite/).
 
-To setup the library, clone the repo locally, and install [Altium-Library.DbLib](./Altium-Library.DbLib) in Altium.
+To setup and use the library, you need complete the following steps:
 
-You will then need to run the GitHub [file download script](./gh_download/downloader.py) (for downloading generic footprints).
+- Clone this repository locally.
+- Run the [GitHub file download script](./gh_download/downloader.py) (for downloading generic footprints).
+- Update the DB file path in the connection string of [`Altium-Library.DbLib`](./Altium-Library.DbLib) to and absolute path.
+- Install [`Altium-Library.DbLib`](./Altium-Library.DbLib) as a library in Altium through the Library Preferences panel.
 
-Alternatively, you can use the [provided PowerShell script](./scripts/update_lib.ps1) that creates a Python virtual environment, installs required dependencies, and runs the script automatically.
+Alternatively, you can use the [provided PowerShell script](./scripts/update_lib.ps1) that creates a Python virtual environment, installs required dependencies, and performs steps 2 and 3 automatically.
 
 That same script can then be run periodically to fully update your local library.
 
