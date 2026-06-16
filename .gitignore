@@ -4,4 +4,4 @@
 **/__pycache__
 ~$*.xlsx
 footprints/generics/*.PcbLib
-!footprints/generics/generics.PcbLib
+!footprints/generics/pcb_generics.PcbLib
