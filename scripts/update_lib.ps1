@@ -2,28 +2,24 @@
 <#
 .SYNOPSIS
     Hard-resets the repository, pulls the latest changes, re-runs the downloader,
-    and rewrites the .DbLib connection string to point at the local absolute path
-    of Altium-Library.db.
-.NOTES
-    If script execution is blocked, run via:
-        powershell -ExecutionPolicy Bypass -File .\update_lib.ps1
+    and rewrites the .DbLib connection string.
 #>
 
 $ErrorActionPreference = "Stop"
 
 $repoRoot = git rev-parse --show-toplevel
-if ($LASTEXITCODE -ne 0) { throw "Not inside a git repository." }
+if ($LASTEXITCODE -ne 0) { throw "Not inside a git repository!" }
 $repoRoot = $repoRoot.Trim()
 
 Push-Location $repoRoot
 try {
-    Write-Host "Discarding local changes (git reset --hard) ..."
+    Write-Host "Discarding local changes..."
     git reset --hard
-    if ($LASTEXITCODE -ne 0) { throw "git reset failed." }
+    if ($LASTEXITCODE -ne 0) { throw "git reset failed!" }
 
-    Write-Host "Pulling latest changes from remote ..."
+    Write-Host "Pulling latest changes from remote..."
     git pull --ff-only
-    if ($LASTEXITCODE -ne 0) { throw "git pull failed." }
+    if ($LASTEXITCODE -ne 0) { throw "git pull failed!" }
 } finally {
     Pop-Location
 }
