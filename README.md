@@ -10,10 +10,11 @@
 <br>
 
 ----
-This repository contains my main Altium database library. This library contains a mix of generic, custom, and downloaded parts from UltraLibrarian and Component Search Engine.
+This repository contains my main Altium database library.
+This library contains a mix of generic, custom, and downloaded parts from UltraLibrarian, Component Search Engine, and SnapMagic.
 
 > [!NOTE]
-> Some generic part footprints are downloaded from the [Celestial Altium Library](https://github.com/issus/altium-library).
+> Some generic part footprints must be downloaded from the [Celestial Altium Library](https://github.com/issus/altium-library).
 
 <br>
 
