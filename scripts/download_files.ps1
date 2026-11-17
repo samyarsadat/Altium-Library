@@ -8,9 +8,7 @@ $ErrorActionPreference = "Stop"
 
 & (Join-Path $PSScriptRoot "setup_venv.ps1") -ProjectDir "gh_download"
 
-$repoRoot = git rev-parse --show-toplevel
-if ($LASTEXITCODE -ne 0) { throw "Not inside a git repository!" }
-$repoRoot = $repoRoot.Trim()
+$repoRoot = Split-Path -Parent $PSScriptRoot
 
 $downloadDir = Join-Path $repoRoot "gh_download"
 $venvPython  = Join-Path $downloadDir ".venv\Scripts\python.exe"

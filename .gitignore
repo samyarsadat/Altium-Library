@@ -3,5 +3,6 @@
 **/.venv
 **/__pycache__
 ~$*.xlsx
+Altium-Library.local.DbLib
 footprints/generics/*.PcbLib
 !footprints/generics/pcb_generics.PcbLib

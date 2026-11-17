@@ -12,9 +12,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$repoRoot = git rev-parse --show-toplevel
-if ($LASTEXITCODE -ne 0) { throw "Not inside a git repository!" }
-$repoRoot = $repoRoot.Trim()
+$repoRoot = Split-Path -Parent $PSScriptRoot
 
 $projectPath = Join-Path $repoRoot $ProjectDir
 if (-not (Test-Path $projectPath)) { throw "Project directory not found: $projectPath" }

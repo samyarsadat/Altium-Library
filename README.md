@@ -28,8 +28,8 @@ To setup and use the library, you need complete the following steps:
 
 - Clone this repository locally.
 - Run the [GitHub file download script](./gh_download/downloader.py) (for downloading generic footprints).
-- Update the DB file path in the connection string of [`Altium-Library.DbLib`](./Altium-Library.DbLib) to an absolute path.
-- Install [`Altium-Library.DbLib`](./Altium-Library.DbLib) as a library in Altium through the Library Preferences panel.
+- Copy [`Altium-Library.DbLib`](./Altium-Library.DbLib) to `Altium-Library.local.DbLib` and update the DB file path in the copy's connection string to an absolute path.
+- Install `Altium-Library.local.DbLib` as a library in Altium through the Library Preferences panel.
 
 Alternatively, you can use the [provided PowerShell script](./scripts/update_lib.ps1) that creates a Python virtual environment, installs required dependencies, and performs steps 2 and 3 automatically.
 

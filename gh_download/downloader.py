@@ -22,7 +22,6 @@
     SOFTWARE.
 """
 
-import subprocess
 import requests
 import json
 import tomllib
@@ -36,18 +35,13 @@ DIR_DOWNLOAD_CONFIF_FILE = "gh_downloads.json"
 GH_DOWNLAOD_URL = "https://raw.githubusercontent.com"
 
 # Download directories config
-_DOWNLAOD_DIRS_FILE = "gh_download_dirs.toml"
+_DOWNLAOD_DIRS_FILE = Path(__file__).with_name("gh_download_dirs.toml")
 with open(_DOWNLAOD_DIRS_FILE, "rb") as file:
     _DL_CONFIG = tomllib.load(file)
 
 DOWNLOAD_DIRS = _DL_CONFIG["download_dirs"]
 
 
-
-def get_git_root() -> Path:
-    return Path(subprocess.check_output([
-        "git", "rev-parse", "--show-toplevel"
-    ]).decode().strip())
 
 def download_file(url: str, save_path: Path) -> bool:
     try:
@@ -126,7 +120,7 @@ def main():
     )
 
     args = arg_parser.parse_args()
-    repo_root = get_git_root()
+    repo_root = Path(__file__).resolve().parent.parent
 
     for dir in DOWNLOAD_DIRS:
         dir_path = repo_root / dir
